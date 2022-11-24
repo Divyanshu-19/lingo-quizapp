@@ -43,7 +43,11 @@ const McQuestions = () => {
       if (prev < questionMain.length - 1) {
         return prev + 1;
       } else {
-        return navigate(`/score/${marks}-${questionMain.length}`);
+        if (selectedOption === optionSol[qnumber][0]) {
+          return navigate(`/score/${marks + 1}-${questionMain.length}`);
+        } else {
+          return navigate(`/score/${marks}-${questionMain.length}`);
+        }
       }
     });
     setSelectedOption(null);
