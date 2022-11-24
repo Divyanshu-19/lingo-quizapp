@@ -88,7 +88,7 @@ const McQuestions = () => {
           />
         </div>
         <div className="col-3 px-0 mx-0">
-          <Timer totalTime={6} stopTimer={stopTimer} />
+          <Timer totalTime={45} stopTimer={stopTimer} />
           <InfoCard
             currentQuestion={qnumber + 1}
             totalQuestion={questionMain.length}
