@@ -1,5 +1,6 @@
 import React from "react";
 import OptionsCard from "./OptionsCard";
+import OptionsCard2 from "./OptionsCard2";
 
 const OptionSection = ({
   selectOption,
@@ -8,6 +9,7 @@ const OptionSection = ({
   setShowNext,
   options,
   handleNewQuestion,
+  currentType,
 }) => {
   const handleContinue = () => {
     handleNewQuestion();
@@ -22,13 +24,24 @@ const OptionSection = ({
         borderRadius: "20px",
       }}
     >
-      <OptionsCard
-        selectOption={selectOption}
-        optionSol={optionSol}
-        showNext={showNext}
-        setShowNext={setShowNext}
-        options={options}
-      />
+      {currentType === "type1" && (
+        <OptionsCard
+          selectOption={selectOption}
+          optionSol={optionSol}
+          showNext={showNext}
+          setShowNext={setShowNext}
+          options={options}
+        />
+      )}
+      {currentType === "type2" && (
+        <OptionsCard2
+          selectOption={selectOption}
+          optionSol={optionSol}
+          showNext={showNext}
+          setShowNext={setShowNext}
+          options={options}
+        />
+      )}
       {showNext ? (
         <div className="text-end me-3" style={{ position: "relative" }}>
           <button
