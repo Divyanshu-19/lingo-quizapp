@@ -18,9 +18,9 @@ const QuestionCard = ({
 
   const getAudio = () => {
     if (qNumber === 0 && selectedOption && selectedOption === optionSol[0]) {
-      return q1_after;
-    } else if (qNumber === 0) {
       return q1_before;
+    } else if (qNumber === 0) {
+      return q1_after;
     } else if (
       qNumber === 1 &&
       selectedOption &&
