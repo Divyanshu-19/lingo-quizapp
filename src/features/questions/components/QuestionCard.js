@@ -26,19 +26,17 @@ const QuestionCard = ({
       selectedOption &&
       selectedOption === optionSol[0]
     ) {
-      return q2_after;
-    } else if (qNumber === 1) {
       return q2_before;
+    } else if (qNumber === 1) {
+      return q2_after;
     }
   };
 
   const [audio, setAudio] = useState(new Audio(getAudio()));
 
   useEffect(() => {
-    if (selectedOption && selectedOption === optionSol[0]) {
-      setAudio(new Audio(getAudio()));
-    }
-  }, [selectedOption]);
+    setAudio(new Audio(getAudio()));
+  }, [selectedOption, qNumber]);
 
   useEffect(() => {
     audio.play();
