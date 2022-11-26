@@ -32,14 +32,16 @@ const QuestionCard = ({
     }
   };
 
-  const [audio, setAudio] = useState(new Audio(getAudio()));
+  const [audio, setAudio] = useState(null);
 
   useEffect(() => {
     setAudio(new Audio(getAudio()));
   }, [selectedOption, qNumber]);
 
   useEffect(() => {
-    audio.play();
+    if (audio) {
+      audio.play();
+    }
   }, [audio]);
 
   return (
